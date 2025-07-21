@@ -13,7 +13,7 @@ const Footer = () => {
           {/* Social Links */}
           <nav className="flex space-x-6" role="navigation" aria-label="Social media links">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/lucasbaruj4"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded"
@@ -34,7 +34,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://linkedin.com/in/lucas-baruja-581064332/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded"
