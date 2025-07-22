@@ -4,7 +4,18 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section className="flex flex-col items-center justify-center min-h-[60vh] text-center relative z-10">
+    <section className="relative flex flex-col items-center justify-center min-h-screen text-center pt-20 overflow-hidden">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0 opacity-20"
+      >
+        <source src="/videos/background-loop_new.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div className="relative z-10 flex flex-col items-center justify-center">
       <motion.h1
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -30,6 +41,7 @@ export default function Hero() {
       >
         View Projects
       </motion.a>
+    </div>
     </section>
   );
 } 
