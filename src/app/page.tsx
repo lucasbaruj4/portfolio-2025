@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import AboutMe from "@/components/AboutMe";
 // This page must be a server component to use async data fetching at build time
 import { projects } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
@@ -20,6 +21,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <AboutMe />
     </>
   );
 }

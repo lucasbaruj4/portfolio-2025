@@ -11,7 +11,7 @@ export default function Hero() {
         transition={{ duration: 0.7, ease: 'easeOut' }}
         className="text-5xl sm:text-7xl font-bold mb-4 text-primary-text"
       >
-        Lucas Baruj
+        Lucas Baruja
       </motion.h1>
       <motion.p
         initial={{ opacity: 0, y: 20 }}
@@ -19,7 +19,7 @@ export default function Hero() {
         transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
         className="text-lg sm:text-xl text-secondary-text mb-8 max-w-xl"
       >
-        Data Scientist & Full Stack Developer passionate about building beautiful, impactful digital experiences.
+        Developing practical AI solutions to solve real-world challenges at the intersection of business and technology.
       </motion.p>
       <motion.a
         initial={{ opacity: 0, y: 10 }}

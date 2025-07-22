@@ -1,6 +1,6 @@
-import Image from "next/image";
+'use client';
+
 import { Project } from "@/types/project";
-import { motion, easeOut } from "framer-motion";
 
 interface ProjectCardProps {
   project: Project;
@@ -9,45 +9,8 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ project, index = 0, reduceMotion }: ProjectCardProps) => {
-  const shouldReduceMotion = reduceMotion;
-
-  const variants = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 40 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: shouldReduceMotion ? 0 : 0.5,
-        ease: easeOut,
-        delay: shouldReduceMotion ? 0 : index * 0.15,
-      },
-    },
-  };
-
   return (
-    <motion.div
-      variants={variants}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
-      whileHover={shouldReduceMotion ? {} : { scale: 1.03, boxShadow: "0 8px 32px rgba(0,0,0,0.10)" }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="bg-light-background rounded-lg overflow-hidden flex flex-col h-full border border-gray-700 focus-within:ring-2 focus-within:ring-accent"
-      tabIndex={0}
-      aria-label={project.title}
-    >
-      {project.image && (
-        <div className="relative w-full h-48">
-          <Image
-            src={project.image}
-            alt={project.title + ' thumbnail'}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 33vw"
-            priority
-          />
-        </div>
-      )}
+    <div className="bg-light-background rounded-lg overflow-hidden flex flex-col h-full border border-gray-700 focus-within:ring-2 focus-within:ring-accent">
       <div className="flex-1 flex flex-col p-5">
         <h3 className="text-lg font-semibold mb-2 text-primary-text">{project.title}</h3>
         <p className="text-secondary-text mb-4 flex-1">{project.description}</p>
@@ -86,8 +49,8 @@ const ProjectCard = ({ project, index = 0, reduceMotion }: ProjectCardProps) => 
           )}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
-export default ProjectCard; 
+export default ProjectCard;
