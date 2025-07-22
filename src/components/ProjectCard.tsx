@@ -1,8 +1,6 @@
-'use client';
-
 import Image from "next/image";
 import { Project } from "@/types/project";
-import { motion, useReducedMotion, easeOut } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
 
 interface ProjectCardProps {
   project: Project;
@@ -11,8 +9,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ project, index = 0, reduceMotion }: ProjectCardProps) => {
-  const reducedMotionFromHook = useReducedMotion();
-  const shouldReduceMotion = reduceMotion !== undefined && reduceMotion !== null ? reduceMotion : reducedMotionFromHook;
+  const shouldReduceMotion = reduceMotion;
 
   const variants = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 40 },
@@ -39,16 +36,18 @@ const ProjectCard = ({ project, index = 0, reduceMotion }: ProjectCardProps) => 
       tabIndex={0}
       aria-label={project.title}
     >
-      <div className="relative w-full h-48">
-        <Image
-          src={project.imageUrl}
-          alt={project.title + ' thumbnail'}
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, 33vw"
-          priority
-        />
-      </div>
+      {project.image && (
+        <div className="relative w-full h-48">
+          <Image
+            src={project.image}
+            alt={project.title + ' thumbnail'}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 33vw"
+            priority
+          />
+        </div>
+      )}
       <div className="flex-1 flex flex-col p-5">
         <h3 className="text-lg font-semibold mb-2 text-primary-text">{project.title}</h3>
         <p className="text-secondary-text mb-4 flex-1">{project.description}</p>
@@ -63,24 +62,28 @@ const ProjectCard = ({ project, index = 0, reduceMotion }: ProjectCardProps) => 
           ))}
         </div>
         <div className="mt-auto flex space-x-3">
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 inline-block text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            aria-label={`View live demo of ${project.title}`}
-          >
-            Live Demo
-          </a>
-          <a
-            href={project.sourceUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 inline-block text-center bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            aria-label={`View source code of ${project.title}`}
-          >
-            Source Code
-          </a>
+          {project.liveDemoLink && (
+            <a
+              href={project.liveDemoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 inline-block text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              aria-label={`View live demo of ${project.title}`}
+            >
+              Live Demo
+            </a>
+          )}
+          {project.sourceCodeLink && (
+            <a
+              href={project.sourceCodeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 inline-block text-center bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              aria-label={`View source code of ${project.title}`}
+            >
+              Source Code
+            </a>
+          )}
         </div>
       </div>
     </motion.div>

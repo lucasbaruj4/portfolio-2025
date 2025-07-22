@@ -1,9 +1,8 @@
 export interface Project {
-  id: number;
   title: string;
   description: string;
-  imageUrl: string;
+  image: string;
   tags: string[];
-  liveUrl: string;
-  sourceUrl: string;
-} 
+  liveDemoLink: string;
+  sourceCodeLink: string;
+}

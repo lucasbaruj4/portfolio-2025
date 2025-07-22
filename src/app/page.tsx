@@ -1,11 +1,10 @@
 import Hero from "@/components/Hero";
 // This page must be a server component to use async data fetching at build time
-import { getGithubProjects } from "@/lib/github";
+import { projects } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
 import { Project } from "@/types/project";
 
-export default async function Home() {
-  const projects: Project[] = await getGithubProjects();
+export default function Home() {
   const shouldReduceMotion = false; // Animation is handled in ProjectCard, which respects reduced motion
 
   return (
@@ -17,7 +16,7 @@ export default async function Home() {
           className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
         >
           {projects.map((project, idx) => (
-            <ProjectCard key={project.id} project={project} index={idx} reduceMotion={shouldReduceMotion} />
+            <ProjectCard key={idx} project={project} index={idx} reduceMotion={shouldReduceMotion} />
           ))}
         </div>
       </section>
