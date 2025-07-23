@@ -37,7 +37,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.4, ease: 'easeOut' }}
         href="#projects"
-        className="inline-block px-8 py-3 rounded-full border-2 border-accent text-accent font-semibold text-lg hover:bg-accent hover:text-primary-text transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+        className="inline-block px-8 py-3 rounded-full border-2 border-accent text-accent font-semibold text-lg bg-black hover:bg-accent-dark hover:text-primary-text transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
       >
         View Projects
       </motion.a>

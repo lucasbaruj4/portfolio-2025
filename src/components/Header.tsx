@@ -16,34 +16,24 @@ const Header = () => {
   };
 
   const navItems = [
-    { href: '/', label: 'Home' },
     { href: '#projects', label: 'Projects' },
-    { href: '/contact', label: 'Contact' },
+    { href: 'mailto:barujalucas0@gmail.com', label: 'Email' },
   ];
 
   return (
-    <header className="sticky top-0 z-50 transition-all">
+    <header className="top-0 z-50 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo/Brand */}
-          <div className="flex-shrink-0">
-            <Link
-              href="/"
-              className="text-2xl font-extrabold bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent tracking-tight"
-              aria-label="Go to homepage"
-            >
-              Lucas
-            </Link>
-          </div>
+          
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:block" role="navigation" aria-label="Main navigation">
+          <nav className="hidden md:block ml-auto" role="navigation" aria-label="Main navigation">
             <ul className="flex space-x-8">
               {navItems.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-primary-text hover:text-accent focus:text-accent px-3 py-2 rounded-md text-base font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+                    className="text-primary-text hover:text-accent-dark focus:text-accent-dark px-3 py-2 rounded-md text-base font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
                     onClick={closeMenu}
                   >
                     {item.label}
