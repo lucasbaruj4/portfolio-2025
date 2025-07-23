@@ -41,7 +41,7 @@ const ProjectCard = ({ project, index = 0, reduceMotion }: ProjectCardProps) => 
       {project.image && (
         <div className="relative w-full h-48">
           <Image
-            src={project.image}
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${project.image}`}
             alt={project.title + ' thumbnail'}
             fill
             className="object-cover"

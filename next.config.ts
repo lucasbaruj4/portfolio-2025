@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: 'export', // Enables static HTML export for GitHub Pages
+  basePath: '/portfolio-2025', // Adjust this to your repository name
   images: {
+    unoptimized: true, // Disable Image Optimization for static export
     remotePatterns: [
       {
         protocol: 'https',
