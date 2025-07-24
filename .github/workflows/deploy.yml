@@ -36,7 +36,7 @@ jobs:
         run: npm ci
       
       - name: Build with Next.js
-        run: cp next.config.production.ts next.config.ts && npm run build
+        run: npm run build:prod
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

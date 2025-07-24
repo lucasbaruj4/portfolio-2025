@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: 'export', // Enables static HTML export for GitHub Pages
-  basePath: '', // No basePath for local development
+  basePath: '/portfolio-2025', // Repository name for GitHub Pages
   trailingSlash: true, // Required for GitHub Pages
   images: {
     unoptimized: true, // Disable Image Optimization for static export
@@ -23,4 +23,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default nextConfig; 
