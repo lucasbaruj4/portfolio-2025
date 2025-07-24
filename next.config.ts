@@ -3,6 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: 'export', // Enables static HTML export for GitHub Pages
   basePath: '/portfolio-2025', // Repository name for GitHub Pages
+  assetPrefix: '/portfolio-2025/', // Ensures assets are loaded with correct path
   trailingSlash: true, // Required for GitHub Pages
   images: {
     unoptimized: true, // Disable Image Optimization for static export
