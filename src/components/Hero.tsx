@@ -12,7 +12,7 @@ export default function Hero() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-0 opacity-20"
       >
-        <source src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/videos/background-loop_new.mp4`} type="video/mp4" />
+        <source src="/videos/background-loop_new.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className="relative z-10 flex flex-col items-center justify-center">

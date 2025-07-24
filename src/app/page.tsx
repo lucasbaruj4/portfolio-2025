@@ -3,7 +3,6 @@ import AboutMe from "@/components/AboutMe";
 
 import { projects } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
-import { Project } from "@/types/project";
 
 export default function Home() {
   const shouldReduceMotion = false; // Animation is handled in ProjectCard, which respects reduced motion

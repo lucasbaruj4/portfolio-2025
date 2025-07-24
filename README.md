@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lucas Portfolio
+
+A personal portfolio website built with Next.js, TypeScript, and Tailwind CSS. This project showcases software development projects and skills in a modern, responsive design.
+
+## Features
+
+- **Responsive Design**: Optimized for all device sizes
+- **Static Site Generation**: Fast loading with Next.js static export
+- **Modern UI**: Built with Tailwind CSS and Framer Motion
+- **Contact Form**: Integrated with Formspree for easy communication
+- **Project Gallery**: Showcase your work with live demos and source code links
 
 ## Getting Started
 
-First, run the development server:
+### Development
+
+First, install dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To build the project for production:
+
+```bash
+npm run build
+```
+
+This will generate static files in the `out/` directory.
+
+## Deployment
+
+This project is configured for automatic deployment to GitHub Pages using GitHub Actions.
+
+### Manual Deployment
+
+1. Build the project: `npm run build`
+2. The static files will be generated in the `out/` directory
+3. Deploy the contents of the `out/` directory to your web server
+
+### GitHub Pages Deployment
+
+The project includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) that automatically:
+- Builds the project on every push to the main branch
+- Deploys the static files to GitHub Pages
+
+To enable GitHub Pages:
+1. Go to your repository settings
+2. Navigate to "Pages" in the sidebar
+3. Select "GitHub Actions" as the source
+4. The site will be available at `https://yourusername.github.io/lucas-portfolio-fresh`
+
+## Configuration
+
+- **Base Path**: Configured for GitHub Pages deployment at `/lucas-portfolio-fresh`
+- **Images**: Optimized for static export with unoptimized images
+- **Contact Form**: Uses Formspree for form handling
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about the technologies used:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [Framer Motion](https://www.framer.com/motion/)
+- [TypeScript](https://www.typescriptlang.org/docs/)
