@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Project } from "@/types/project";
 import { motion, easeOut } from "framer-motion";
+import { getAssetPath } from "@/utils/paths";
 
 interface ProjectCardProps {
   project: Project;
@@ -41,7 +42,7 @@ const ProjectCard = ({ project, index = 0, reduceMotion }: ProjectCardProps) => 
       {project.image && (
         <div className="relative w-full h-48">
           <Image
-            src={project.image}
+            src={getAssetPath(project.image)}
             alt={project.title + ' thumbnail'}
             fill
             className="object-cover"
