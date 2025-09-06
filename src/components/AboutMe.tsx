@@ -19,7 +19,7 @@ const AboutMe = () => {
         transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
         className="text-lg text-secondary-text leading-relaxed max-w-3xl mx-auto"
       >
-        I am a dedicated third-year Business Informatics student at Universidad Paraguayo Alemana (UPA) and an aspiring AI Engineer, driven to leverage technology for positive global impact. My academic journey is centered on Artificial Intelligence and Machine Learning, providing me with a unique perspective that connects technical development with strategic business applications. I am passionate about building practical, data-driven solutions to solve real-world problems. This September, I am excited to expand my skills and international outlook through an exchange semester and internship in Germany, bringing me closer to my goal of engineering a smarter, more efficient future.
+        I'm a third-year Business Informatics student at Universidad Paraguayo Alemana. I love AI, machine learning, and understanding how computers work at every level - from neural networks to low-level system architecture. I tend to follow whatever genuinely grabs my attention, which means jumping between projects based on what feels interesting rather than what's "strategic." This September I'm heading to Germany for an exchange semester and internship. I've learned that when I work on stuff that actually excites me, I produce way better work than when I force myself through things because they look good on paper.
       </motion.p>
     </section>
   );

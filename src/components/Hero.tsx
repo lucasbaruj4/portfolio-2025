@@ -31,7 +31,7 @@ export default function Hero() {
         transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
         className="text-lg sm:text-xl text-secondary-text mb-8 max-w-xl"
       >
-        Developing practical AI solutions to solve real-world challenges at the intersection of business and technology.
+        i love computers
       </motion.p>
       <motion.a
         initial={{ opacity: 0, y: 10 }}
