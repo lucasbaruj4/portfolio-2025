@@ -21,13 +21,11 @@ const Header = () => {
   ];
 
   return (
-    <header className="top-0 z-50 transition-all">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:block ml-auto" role="navigation" aria-label="Main navigation">
+    <header className="top-0 z-50 transition-all w-full">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+        <div className="flex justify-end items-center h-16">
+          {/* Desktop Navigation - now positioned at the right edge */}
+          <nav className="hidden md:block" role="navigation" aria-label="Main navigation">
             <ul className="flex space-x-8">
               {navItems.map((item) => (
                 <li key={item.href}>

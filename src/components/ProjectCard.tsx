@@ -33,20 +33,18 @@ const ProjectCard = ({ project, index = 0, reduceMotion }: ProjectCardProps) => 
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
-      whileHover={shouldReduceMotion ? {} : { scale: 1.03, boxShadow: "0 8px 32px rgba(0,0,0,0.10)" }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
       className="bg-light-background rounded-lg overflow-hidden flex flex-col h-full border border-gray-700 focus-within:ring-2 focus-within:ring-accent"
       tabIndex={0}
       aria-label={project.title}
     >
       {project.image && (
-        <div className="relative w-full h-48">
+        <div className="relative w-full h-64 sm:h-72 md:h-80">
           <Image
             src={getAssetPath(project.image)}
             alt={project.title + ' thumbnail'}
             fill
             className="object-cover"
-            sizes="(max-width: 768px) 100vw, 33vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority
           />
         </div>
@@ -54,11 +52,18 @@ const ProjectCard = ({ project, index = 0, reduceMotion }: ProjectCardProps) => 
       <div className="flex-1 flex flex-col p-5">
         <h3 className="text-lg font-semibold mb-2 text-primary-text">{project.title}</h3>
         <p className="text-secondary-text mb-4 flex-1">{project.description}</p>
-        <div className="mb-4 flex flex-wrap gap-2">
+        <div
+          className="mb-4 grid gap-2"
+          style={{
+            gridTemplateColumns: project.tags.length <= 4
+              ? `repeat(${project.tags.length}, 1fr)`
+              : `repeat(auto-fit, minmax(120px, 1fr))`
+          }}
+        >
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="inline-block bg-black text-primary-text text-xs font-medium px-2 py-1 rounded hover:bg-accent-dark"
+              className="bg-black text-primary-text text-xs font-medium px-3 py-1.5 rounded hover:bg-accent-dark text-center"
             >
               {tag}
             </span>
